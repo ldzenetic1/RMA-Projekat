@@ -20,7 +20,7 @@ fun StandardNewsCard(item: NewsItem) {
             Box(modifier = Modifier.size(80.dp)) {
                 Image(
                     painter = painterResource(id = R.drawable.news),
-                    contentDescription = "Featured Image",
+                    contentDescription = "Standard image",
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.Crop
                 )

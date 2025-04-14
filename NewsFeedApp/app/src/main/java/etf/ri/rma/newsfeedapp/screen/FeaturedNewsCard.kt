@@ -22,7 +22,7 @@ fun FeaturedNewsCard(item: NewsItem) {
                 .fillMaxWidth()) {
                 Image(
                     painter = painterResource(id = R.drawable.news),
-                    contentDescription = "Featured Image",
+                    contentDescription = "Featured image",
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.Crop
                 )
