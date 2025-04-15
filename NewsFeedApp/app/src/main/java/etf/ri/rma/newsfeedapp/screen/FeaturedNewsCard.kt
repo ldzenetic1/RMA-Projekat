@@ -9,11 +9,14 @@ import etf.ri.rma.newsfeedapp.model.NewsItem
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.Image
+import androidx.compose.ui.graphics.Color
 import etf.ri.rma.newsfeedapp.R
 
 @Composable
 fun FeaturedNewsCard(item: NewsItem) {
-    Card(modifier = Modifier
+    Card(colors = CardDefaults.cardColors(
+        containerColor = Color(0xFFFFFACD)),
+        modifier = Modifier
         .fillMaxWidth()
         .padding(4.dp)) {
         Column(modifier = Modifier.padding(8.dp)) {

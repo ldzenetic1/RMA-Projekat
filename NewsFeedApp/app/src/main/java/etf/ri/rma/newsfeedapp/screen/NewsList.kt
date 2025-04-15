@@ -1,5 +1,6 @@
 package etf.ri.rma.newsfeedapp.screen
 
+import android.graphics.Color
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
