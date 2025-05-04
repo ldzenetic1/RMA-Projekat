@@ -13,8 +13,9 @@ import androidx.compose.ui.graphics.Color
 import etf.ri.rma.newsfeedapp.R
 
 @Composable
-fun FeaturedNewsCard(item: NewsItem) {
-    Card(colors = CardDefaults.cardColors(
+fun FeaturedNewsCard(item: NewsItem, onClick: () -> Unit) {
+    Card(onClick = onClick,
+        colors = CardDefaults.cardColors(
         containerColor = Color(0xFFFFFACD)),
         modifier = Modifier
         .fillMaxWidth()

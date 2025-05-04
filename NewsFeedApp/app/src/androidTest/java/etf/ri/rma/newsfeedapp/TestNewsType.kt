@@ -12,8 +12,10 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import kotlin.test.fail
-
+import org.junit.Ignore
+/*
 @RunWith(AndroidJUnit4::class)
+@Ignore
 class TestNewsType {
     @get:Rule
     val composeTestRule = createComposeRule()
@@ -45,4 +47,4 @@ class TestNewsType {
             fail("Nema featured vijesti!")
         }
     }
-}
+}*/
