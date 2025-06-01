@@ -15,11 +15,11 @@ fun NewsList(newsItems: List<NewsItem>, onNewsItemClick: (String) -> Unit) {
         verticalArrangement = Arrangement.spacedBy(8.dp),
         modifier = Modifier.testTag("news_list")
     ) {
-        items(newsItems, key = { it.id }) { news ->
+        items(newsItems, key = { it.uuid }) { news ->
             if (news.isFeatured) {
-                FeaturedNewsCard(news){onNewsItemClick(news.id)}
+                FeaturedNewsCard(news){onNewsItemClick(news.uuid)}
             } else {
-                StandardNewsCard(news){onNewsItemClick(news.id)}
+                StandardNewsCard(news){onNewsItemClick(news.uuid)}
             }
         }
     }

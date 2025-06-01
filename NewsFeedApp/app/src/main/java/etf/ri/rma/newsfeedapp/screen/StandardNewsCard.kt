@@ -10,6 +10,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import etf.ri.rma.newsfeedapp.R
 import etf.ri.rma.newsfeedapp.model.NewsItem
+import coil.compose.AsyncImage
 
 @Composable
 fun StandardNewsCard(item: NewsItem, onClick: () -> Unit) {
@@ -20,11 +21,13 @@ fun StandardNewsCard(item: NewsItem, onClick: () -> Unit) {
         .padding(4.dp)) {
         Row(modifier = Modifier.padding(8.dp)) {
             Box(modifier = Modifier.size(80.dp)) {
-                Image(
-                    painter = painterResource(id = R.drawable.news),
+                AsyncImage(
+                    model = item.imageUrl ?: R.drawable.news, // Ako nema URL-a, koristi default sliku
                     contentDescription = "Standard image",
                     modifier = Modifier.fillMaxSize(),
-                    contentScale = ContentScale.Crop
+                    contentScale = ContentScale.Crop,
+                    placeholder = painterResource(id = R.drawable.news), // Placeholder dok se slika učitava
+                    error = painterResource(id = R.drawable.news) // Slika u slučaju greške
                 )
             }
             Spacer(modifier = Modifier.width(8.dp))
