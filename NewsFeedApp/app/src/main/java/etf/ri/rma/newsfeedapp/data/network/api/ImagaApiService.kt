@@ -9,6 +9,7 @@ interface ImagaApiService {
         @Query("image_url") imageUrl: String
     ): retrofit2.Response<TaggingResponse>
 }
+
 data class TaggingResponse(
     val result: ResultData
 )

@@ -59,8 +59,8 @@ class NewsDAO {
             "Sve" -> null
             "Politika", "politics" -> "politics"
             "Sport", "sports" -> "sports"
-            "Nauka/tehnologija", "sci" -> "science"
-            "tech" -> "tech"
+            "Nauka", "sci" -> "science"
+            "Tehnologija", "tech" -> "tech"
             "Ljepota i zdravlje" -> "health"
             else -> null
         }
@@ -70,7 +70,8 @@ class NewsDAO {
         return when (apiCategory) {
             "politics" -> "Politika"
             "sports" -> "Sport"
-            "science", "tech" -> "Nauka/tehnologija"
+            "science" -> "Nauka"
+            "tech" -> "Tehnologija"
             "health" -> "Ljepota i zdravlje"
             "business" -> "Posao"
             "entertainment" -> "Zabava"

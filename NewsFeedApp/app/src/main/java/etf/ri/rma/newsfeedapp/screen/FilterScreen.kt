@@ -71,7 +71,7 @@ fun FilterScreen(navController: NavController) {
                 Text("Kategorija:", style = MaterialTheme.typography.titleMedium)
                 Spacer(modifier = Modifier.height(8.dp))
                 FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.fillMaxWidth()) {
-                    val categories = listOf("Sve", "Politika", "Sport", "Nauka/tehnologija", "Ljepota i zdravlje")
+                    val categories = listOf("Sve", "Politika", "Sport", "Nauka", "Tehnologija", "Ljepota i zdravlje")
                     categories.forEach { category ->
                         FilterChip(
                             selected = selectedCategory == category,
@@ -82,7 +82,8 @@ fun FilterScreen(navController: NavController) {
                                     "Sve" -> "filter_chip_all"
                                     "Politika" -> "filter_chip_pol"
                                     "Sport" -> "filter_chip_spo"
-                                    "Nauka/tehnologija" -> "filter_chip_sci"
+                                    "Nauka" -> "filter_chip_sci"
+                                    "Tehnologija" -> "filter_chip_tech"
                                     "Ljepota i zdravlje" -> "filter_chip_none"
                                     else -> ""
                                 }

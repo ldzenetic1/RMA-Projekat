@@ -70,8 +70,6 @@ class ImagaDAO {
                 imageTagsCache[imageUrl] = tags
                 return tags
             } else {
-                val errorBody = response.errorBody()?.string()
-                println("Imagga API Error: ${response.code()} - $errorBody")
                 throw InvalidImageURLException("Greška prilikom dohvatanja tagova za sliku: ${response.code()} - ${response.message()}")
             }
         } catch (e: Exception) {

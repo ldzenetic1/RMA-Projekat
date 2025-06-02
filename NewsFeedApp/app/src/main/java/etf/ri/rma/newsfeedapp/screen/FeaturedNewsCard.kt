@@ -8,7 +8,6 @@ import androidx.compose.ui.unit.dp
 import etf.ri.rma.newsfeedapp.model.NewsItem
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.foundation.Image
 import androidx.compose.ui.graphics.Color
 import etf.ri.rma.newsfeedapp.R
 import coil.compose.AsyncImage
@@ -26,12 +25,12 @@ fun FeaturedNewsCard(item: NewsItem, onClick: () -> Unit) {
                 .height(150.dp)
                 .fillMaxWidth()) {
                 AsyncImage(
-                    model = item.imageUrl ?: R.drawable.news, // Ako nema URL-a, koristi default sliku
+                    model = item.imageUrl ?: R.drawable.news,
                     contentDescription = "Featured image",
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.Crop,
-                    placeholder = painterResource(id = R.drawable.news), // Placeholder dok se slika učitava
-                    error = painterResource(id = R.drawable.news) // Slika u slučaju greške
+                    placeholder = painterResource(id = R.drawable.news),
+                    error = painterResource(id = R.drawable.news)
                 )
             }
             Spacer(modifier = Modifier.height(8.dp))

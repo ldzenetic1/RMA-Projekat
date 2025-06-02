@@ -147,7 +147,7 @@ fun NewsFeedScreen(navController: NavController) {
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                val categories = listOf("Sve", "Politika", "Sport", "Nauka/tehnologija", "Ljepota i zdravlje")
+                val categories = listOf("Sve", "Politika", "Sport", "Nauka", "Tehnologija", "Ljepota i zdravlje")
                 categories.forEach {category ->
                     FilterChip(
                         selected = selectedCategory == category,
@@ -164,7 +164,8 @@ fun NewsFeedScreen(navController: NavController) {
                                 "Sve" -> "filter_chip_all"
                                 "Politika" -> "filter_chip_pol"
                                 "Sport" -> "filter_chip_spo"
-                                "Nauka/tehnologija" -> "filter_chip_sci"
+                                "Nauka"-> "filter_chip-sci"
+                                "Tehnologija" -> "filter_chip_tech"
                                 "Ljepota i zdravlje" -> "filter_chip_none"
                                 else -> ""
                             }

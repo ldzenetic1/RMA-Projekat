@@ -1,6 +1,5 @@
 package etf.ri.rma.newsfeedapp.screen
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -22,12 +21,12 @@ fun StandardNewsCard(item: NewsItem, onClick: () -> Unit) {
         Row(modifier = Modifier.padding(8.dp)) {
             Box(modifier = Modifier.size(80.dp)) {
                 AsyncImage(
-                    model = item.imageUrl ?: R.drawable.news, // Ako nema URL-a, koristi default sliku
+                    model = item.imageUrl ?: R.drawable.news,
                     contentDescription = "Standard image",
                     modifier = Modifier.fillMaxSize(),
                     contentScale = ContentScale.Crop,
-                    placeholder = painterResource(id = R.drawable.news), // Placeholder dok se slika učitava
-                    error = painterResource(id = R.drawable.news) // Slika u slučaju greške
+                    placeholder = painterResource(id = R.drawable.news),
+                    error = painterResource(id = R.drawable.news) 
                 )
             }
             Spacer(modifier = Modifier.width(8.dp))

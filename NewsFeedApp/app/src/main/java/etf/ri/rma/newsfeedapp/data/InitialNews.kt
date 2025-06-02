@@ -8,7 +8,6 @@ fun getInitialNews(): List<NewsItem> = listOf(
             title =  "President Trump rips ‘scum’ Biden admin over illegal migrants in fiery Memorial Day message",
             snippet = "President Trump blasted out a fiery Memorial Day message first thing Monday — ripping the “scum” Biden administration for allowing scores of violent illeg...",
             imageUrl = "https://nypost.com/wp-content/uploads/sites/2/2025/05/105393656.jpg?quality=75&strip=all&w=1024",
-            //category = "Nauka/tehnologija",
             category =  "general",
             isFeatured = false,
             source = "nypost.com",
@@ -27,7 +26,7 @@ fun getInitialNews(): List<NewsItem> = listOf(
         imageTags = arrayListOf()
     ),
     NewsItem(
-        uuid = "cc11e3ab-ced0-4a42-9146-e426505e2e67",//"40fc9149-6ae0-48d6-af3b-567f533b3412",
+        uuid = "40fc9149-6ae0-48d6-af3b-567f533b3412",
         title = "Supreme Court Won't Hear Case on Teen's T-Shirts",
         snippet = "The Supreme Court has decided not to hear a case brought on behalf of a middle schooler and his T-shirts. As NBC News reports, the unidentified seventh-grader i...",
         imageUrl = "https://img1-azrcdn.newser.com/image/1612964-12-20250527104632.jpeg",
@@ -49,7 +48,7 @@ fun getInitialNews(): List<NewsItem> = listOf(
         imageTags = arrayListOf()
     ),
     NewsItem(
-        uuid = "df4ad427-a672-4c67-b6c6-6f81aa00e164",//"d25dfb76-6bdc-4432-8f31-8cf86da8a053",
+        uuid = "d25dfb76-6bdc-4432-8f31-8cf86da8a053",
         title ="Espanyol's Joan García keeping options open amid Barcelona interest",
         snippet = "Gab Marcotti explains why Barcelona beating Real Madrid to the LaLiga title is their most impressive achievement in over a decade. (1:29)\n\nWhy Marcotti thinks B...",
         imageUrl = "https://a2.espncdn.com/combiner/i?img=%2Fphoto%2F2025%2F0527%2Fr1498976_1296x729_16%2D9.jpg",
@@ -104,7 +103,7 @@ fun getInitialNews(): List<NewsItem> = listOf(
         imageTags = arrayListOf()
     ),
     NewsItem(
-        uuid = "c9a23881-12dd-4005-8982-7b6552a2eb50",//"52026c13-10d1-4c4f-b167-7aa85596186d",
+        uuid = "52026c13-10d1-4c4f-b167-7aa85596186d",
         title = "Earps' retirement leaves England in a hole before Euro 2025",
         snippet = "Open Extended Reactions\n\nThis is the last thing England need. Just six weeks out from the start of Euro 2025, the Lionesses have lost one of their most influent...",
         imageUrl = "https://a.espncdn.com/combiner/i?img=%2Fphoto%2F2025%2F0527%2Fr1498910_1296x729_16%2D9.jpg",
@@ -112,39 +111,6 @@ fun getInitialNews(): List<NewsItem> = listOf(
         isFeatured = false,
         source = "espn.co.uk",
         publishedDate =  "2025-05-27",
-        imageTags = arrayListOf()
-    ),
-    NewsItem(
-        uuid = "bec5c4b3-7a0d-431d-acd5-5bc30fd3fa3e",
-        title = "Elon Musk criticism of Trump tax bill frustrates some Republicans: 'No place in Congress'",
-        snippet =  "Elon Muskâ€™s criticism of House Republicansâ€™ \"big, beautiful bill\" has left some GOP lawmakers frustrated at the tech billionaire.\n\n\"This is why Mr. Musk has...",
-        imageUrl = "https://static.foxnews.com/foxnews.com/content/uploads/2025/02/elon-musk-3.png",
-        category = "politics",
-        isFeatured = false,
-        source = "foxnews.com",
-        publishedDate = "2025-05-29",
-        imageTags = arrayListOf()
-        ),
-    NewsItem(
-        uuid = "67bed2c1-716c-430e-8e9e-56e4d8804058",
-        title = "Italian Princess Crashes â€œHeadfirst Into a Wallâ€ While on Motorcycle During Scary Accident",
-        snippet =  "Watch : Why Jeremy Renner Thinks He Died After Horrific Snowplow Accident\n\nPrincess Maria Carolina is recovering after a harrowing accident.\n\nThe Italian royal ...",
-        imageUrl = "https://akns-images.eonline.com/eol_images/Entire_Site/20250529/538a9b13-556c-49dc-abcb-fbec3fda2687_1748527585.jpg?fit=around|1080:1080&output-quality=90&crop=1080:1080;center,top",
-        category = "politics",
-        isFeatured = false,
-        source = "eonline.com",
-        publishedDate = "2025-05-29",
-        imageTags = arrayListOf()
-    ),
-    NewsItem(
-        uuid = "236bea50-1dea-4ba7-a481-790af87c3584",
-        title = "Blinkâ€™s budget buzzer gets some worthwhile upgrades",
-        snippet =  "Amazonâ€™s budget security camera company, Blink, has launched the second generation of its popular video doorbell. The new Blink Video Doorbell adds a head-to-...",
-        imageUrl = "https://platform.theverge.com/wp-content/uploads/sites/2/2025/05/Blink-Video-Doorbell-1.jpg?quality=90&strip=all&crop=0,23.821989528796,100,52.356020942408&w=1200",
-        category = "politics",
-        isFeatured = false,
-        source = "theverge.com",
-        publishedDate = "2025-05-29",
         imageTags = arrayListOf()
     )
 )
