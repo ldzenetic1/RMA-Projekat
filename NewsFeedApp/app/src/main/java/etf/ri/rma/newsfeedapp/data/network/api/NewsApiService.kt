@@ -31,4 +31,10 @@ interface NewsApiService {
         @Query("api_token") token: String,
         @Query("uuid") uuid: String
     ): NewsApiResponse
+
+    @GET("v1/news/all")
+    suspend fun getHeadlinesBySource(
+        @Query("api_token") apiToken: String,
+        @Query("domains") source: String
+    ): NewsApiResponse
 }

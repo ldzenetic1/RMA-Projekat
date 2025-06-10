@@ -37,11 +37,15 @@ fun NewsDetailsScreen(navController: NavController, newsId: String?) {
     var isLoadingSimilarNews by remember{ mutableStateOf(false) }
     var similarNewsError by remember {mutableStateOf<String?>(null) }
 
+    var headlinesBySource by remember { mutableStateOf<List<NewsItem>>(emptyList()) }
+    var isLoadingHeadlinesBySource by remember { mutableStateOf(false) }
+    var headlinesBySourceError by remember { mutableStateOf<String?>(null) }
+
     val coroutineScope = rememberCoroutineScope()
 
     LaunchedEffect(newsId) {
         if (newsItem != null) {
-            newsItem.imageUrl?.let { url->
+            newsItem.imageUrl?.let { url-> //ucitavanje tagova
                 isLoadingTags = true
                 imageTagsError = null
                 coroutineScope.launch {
@@ -67,6 +71,19 @@ fun NewsDetailsScreen(navController: NavController, newsId: String?) {
                     e.printStackTrace()
                 } finally {
                     isLoadingSimilarNews = false
+                }
+            }
+            isLoadingHeadlinesBySource = true
+            headlinesBySourceError = null
+            coroutineScope.launch {
+                try {
+                    val headlines = NewsDAO.getInstance().getHeadlinesBySource(newsItem.source)
+                    headlinesBySource = headlines.filter { it.uuid != newsItem.uuid }
+                } catch (e: Exception) {
+                    headlinesBySourceError = "Greška pri učitavanju naslova iz istog izvora: ${e.message}"
+                    e.printStackTrace()
+                } finally {
+                    isLoadingHeadlinesBySource = false
                 }
             }
         }
@@ -172,6 +189,34 @@ fun NewsDetailsScreen(navController: NavController, newsId: String?) {
                         modifier = Modifier
                             .clickable{ navController.navigate("details/${related.uuid}") }
                             .testTag(testTag)
+                            .padding(vertical = 4.dp)
+                            .fillMaxWidth()
+                    )
+                }
+            }
+
+            item {
+                Spacer(modifier = Modifier.height(16.dp))
+                Divider()
+                Spacer(modifier = Modifier.height(16.dp))
+                Text("Više vijesti iz istog izvora (${newsItem.source}):", style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.Bold)
+                Spacer(modifier = Modifier.height(8.dp))
+            }
+            if (isLoadingHeadlinesBySource) {
+                item { CircularProgressIndicator(modifier = Modifier.size(24.dp)) }
+            } else if (headlinesBySourceError != null) {
+                item { Text("Greška pri učitavanju naslova iz istog izvora: ${headlinesBySourceError}", color = MaterialTheme.colorScheme.error)}
+            } else if (headlinesBySource.isEmpty()) {
+                item { Text("Nema više vijesti iz ovog izvora.") }
+            } else {
+                items(headlinesBySource.size) { index ->
+                    val headline = headlinesBySource[index]
+                    Text(
+                        text = headline.title,
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.secondary,
+                        modifier = Modifier
                             .padding(vertical = 4.dp)
                             .fillMaxWidth()
                     )

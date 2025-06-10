@@ -24,12 +24,14 @@ class NewsDAO {
     private val API_CALL_THRESHOLD_SECONDS = 30L
 
     private val allCachedNews = ConcurrentHashMap<String, NewsItem>()
+    private val headlinesBySourceCache = ConcurrentHashMap<String, List<NewsItem>>()
 
     private val initialNews = getInitialNews()
 
     companion object {
-        @Volatile
-        private var INSTANCE: NewsDAO? = null
+
+        @Volatile //osigurava da sve niti vide promjenu koja se desi u nekoj od niti
+        private var INSTANCE: NewsDAO? = null //jedna pormjenjiva koja cuva instancu NewsDAO
 
         fun getInstance(): NewsDAO =
             INSTANCE ?: synchronized(this) {
@@ -140,9 +142,7 @@ class NewsDAO {
 
         try {
             val response = api.getSimilarStories(NEWS_API_TOKEN, uuid)
-
             val similar = response.data.map { it.toNewsItem() }
-
             similarStoriesCache[uuid] = similar
 
             similar.forEach { item ->
@@ -164,7 +164,24 @@ class NewsDAO {
             return fallbackSimilar
         }
     }
+    suspend fun getHeadlinesBySource(source: String): List<NewsItem> {
+        headlinesBySourceCache[source]?.let { return it }
 
+        try {
+            val response = api.getHeadlinesBySource(NEWS_API_TOKEN, source)
+            val headlines = response.data.map { it.toNewsItem() }
+            headlinesBySourceCache[source] = headlines
+            headlines.forEach { item ->
+                allCachedNews.putIfAbsent(item.uuid, item)
+            }
+            return headlines
+        } catch (e: Exception) {
+            e.printStackTrace()
+            val fallbackHeadlines = allCachedNews.values.filter { it.source == source }
+            headlinesBySourceCache[source] = fallbackHeadlines
+            return fallbackHeadlines
+        }
+    }
     fun clearCacheForTesting() {
         lastApiCallTime.clear()
         allCachedNews.clear()
