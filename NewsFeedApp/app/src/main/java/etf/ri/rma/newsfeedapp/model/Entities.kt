@@ -21,6 +21,7 @@ data class TagEntity(
     val id: Int = 0,
     val value: String
 )
+
 @Entity(tableName = "NewsTags")
 data class NewsTagCrossRef(
     @PrimaryKey(autoGenerate = true)

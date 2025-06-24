@@ -8,9 +8,6 @@
       <SelectionState runConfigName="TestS3">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="testIfCacheingWorks()">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
       <SelectionState runConfigName="getTopNewsPolitikaDeepCompare()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
@@ -18,6 +15,9 @@
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
       <SelectionState runConfigName="testSimilarStories()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="TestS4">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>

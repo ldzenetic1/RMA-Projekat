@@ -1,6 +1,9 @@
 package etf.ri.rma.newsfeedapp.model
 
+import java.util.ArrayList
+
 data class NewsItem(
+    var id: Int = 0,
     val uuid: String,
     val title: String,
     val snippet: String,
@@ -9,5 +12,5 @@ data class NewsItem(
     val isFeatured: Boolean,
     val source: String,
     val publishedDate: String,
-    val imageTags: ArrayList<String>
+    val imageTags: ArrayList<TagValue> = arrayListOf()
 )

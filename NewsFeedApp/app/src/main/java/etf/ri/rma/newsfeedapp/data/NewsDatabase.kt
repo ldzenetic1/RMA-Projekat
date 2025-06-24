@@ -12,6 +12,7 @@ import androidx.room.RoomDatabase
     entities = [NewsEntity::class, TagEntity::class, NewsTagCrossRef::class],
     version = 2
 )
+
 abstract class NewsDatabase : RoomDatabase() {
     abstract fun savedNewsDAO(): SavedNewsDAO
 

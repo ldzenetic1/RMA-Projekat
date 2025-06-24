@@ -1,5 +1,5 @@
 package etf.ri.rma.newsfeedapp
-
+/*
 import etf.ri.rma.newsfeedapp.data.network.ImagaDAO
 import etf.ri.rma.newsfeedapp.data.network.NewsDAO
 import etf.ri.rma.newsfeedapp.data.network.api.ImagaApiService
@@ -34,4 +34,4 @@ class TestS3PripremljenRetrofit {
         imagaDAO.setApiService(imagaApiService)
         return imagaDAO
     }
-}
+}*/

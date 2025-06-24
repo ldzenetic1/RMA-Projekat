@@ -98,7 +98,6 @@ interface SavedNewsDAO {
     @Query("SELECT id FROM Tags WHERE value = :tagValue")
     suspend fun getTagIdByValue(tagValue: String): Int?
 
-
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertTag(tag: TagEntity): Long
 

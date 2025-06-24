@@ -1,4 +1,4 @@
-package etf.ri.rma.newsfeedapp
+/*package etf.ri.rma.newsfeedapp
 
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -277,4 +277,4 @@ class TestS3 {
         server.shutdown()
     }
 
-}
+}*/

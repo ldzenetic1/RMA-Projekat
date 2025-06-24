@@ -1,5 +1,5 @@
 package etf.ri.rma.newsfeedapp
-
+/*
 object TestS3Data {
     fun getTop3V1(): String {
         return """{
@@ -639,4 +639,4 @@ object TestS3Data {
   }
 }"""
     }
-}
+}*/

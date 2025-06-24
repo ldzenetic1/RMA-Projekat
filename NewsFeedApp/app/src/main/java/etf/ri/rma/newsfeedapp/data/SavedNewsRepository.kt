@@ -19,6 +19,7 @@ object SavedNewsRepository {
         }
         return saveResult
     }
+
     suspend fun getNewsByUuid(uuid: String): NewsWithTags? {
         val dao = database.savedNewsDAO()
         return dao.getNewsByUuidWithTags(uuid)
