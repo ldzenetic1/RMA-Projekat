@@ -9,6 +9,7 @@ object SavedNewsRepository {
     fun initialize(db: NewsDatabase) {
         database = db
     }
+
     suspend fun savedNews(news: NewsItem): Boolean {
         val saveResult = database.savedNewsDAO().saveNews(news)
         if (saveResult) {

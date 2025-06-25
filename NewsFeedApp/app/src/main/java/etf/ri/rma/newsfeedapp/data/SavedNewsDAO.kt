@@ -126,7 +126,6 @@ interface SavedNewsDAO {
         }
         return newTagsAddedCount
     }
-
     @Transaction
     @Query("""
         SELECT N.* FROM News AS N

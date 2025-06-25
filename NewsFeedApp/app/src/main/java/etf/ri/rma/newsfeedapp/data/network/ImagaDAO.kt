@@ -51,6 +51,7 @@ class ImagaDAO(private val context: Context) {
             api = retrofit.create(ImagaApiService::class.java)
         }
     }
+
     fun setApiService(service: ImagaApiService) {
         this.api = service
     }

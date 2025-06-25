@@ -130,6 +130,7 @@ fun NewsDetailsScreen(navController: NavController, newsId: String?) {
             }
         }
     }
+
     BackHandler(enabled = true) {
         navController.popBackStack("newsFeed", inclusive = false)
     }

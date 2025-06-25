@@ -84,7 +84,6 @@ fun NewsFeedScreen(navController: NavController) {
                         updatedNewsList.add(newFeaturedNews.copy(isFeatured = true))
                     }
                 }
-
                 currentNewsInSelectedCategory.forEach { existingNews ->
                     if (updatedNewsList.none { it.uuid == existingNews.uuid }) {
                         updatedNewsList.add(existingNews.copy(isFeatured = false))

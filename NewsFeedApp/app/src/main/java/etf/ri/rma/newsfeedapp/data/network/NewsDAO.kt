@@ -46,7 +46,6 @@ class NewsDAO (private val context: Context) {
     }
 
     companion object {
-
         @Volatile
         private var INSTANCE: NewsDAO? = null
 
